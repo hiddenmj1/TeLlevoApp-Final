@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detalles del Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="trip-card">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{ viaje.nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="location-outline" slot="start"></ion-icon>
+        <ion-label>Destino: {{ viaje.destino }}</ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="time-outline" slot="start"></ion-icon>
+        <ion-label>Hora de salida: {{ viaje.horaSalida | date: 'shortTime' }}</ion-label>
+      </ion-item>
+      <div class="image-container">
+        <img src="assets/img/auto.gif" alt="Trip Image" class="trip-image" />
+      </div>
+      <p class="waiting-text">Espera al conductor...</p>
+      <ion-button expand="block" color="danger" (click)="cancelarViaje()">
+        <ion-icon slot="start" name="close-circle-outline"></ion-icon>
+        Cancelar Viaje
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

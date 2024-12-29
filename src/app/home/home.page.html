@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Pasajero</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="list-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Mapa en la parte superior -->
+  <div id="map" class="map-container"></div>
+
+  <!-- Título de los viajes disponibles -->
+  <ion-card class="ion-padding-horizontal ion-text-center" color="light">
+    <ion-card-header>
+      <ion-card-title>Lista de Viajes</ion-card-title>
+      <ion-card-subtitle>Seleccione un viaje para ver más detalles</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Lista de viajes -->
+  <ion-list>
+    <ion-card *ngFor="let viaje of viajes" class="custom-card">
+      <ion-card-header>
+        <ion-card-title>{{ viaje.destinoNombre || 'Cargando destino...' }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Precio: <strong>{{ viaje.precio | currency:'USD':'symbol':'1.2-2' }}</strong></p>
+        <p>Estado: <strong>{{ viaje.estado || 'Pendiente' }}</strong></p>
+      </ion-card-content>
+
+      <!-- Botones de acción -->
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-button expand="block" color="primary" (click)="verViaje(viaje)">
+            <ion-icon slot="start" name="eye-outline"></ion-icon>
+            Ver en mapa
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" color="success" (click)="aceptarViaje(viaje, $event)">
+            <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+            Aceptar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+</ion-content>

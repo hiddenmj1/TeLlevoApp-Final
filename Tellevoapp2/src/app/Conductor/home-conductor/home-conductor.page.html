@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Conductor</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Mapa centrado en la ubicación del conductor con un diseño más atractivo -->
+  <div #mapElement class="map-container"></div>
+
+  <!-- Sección para mostrar los viajes realizados -->
+  <ion-card *ngIf="viajes.length > 0" class="custom-card">
+    <ion-card-header>
+      <ion-card-title color="dark" class="ion-text-center">Mis Viajes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let viaje of viajes" class="custom-item">
+          <ion-label>
+            <h2>{{ viaje.nombre }}</h2>
+            <p>Destino: {{ viaje.destino }}</p>
+            <p>Hora de salida: {{ viaje.horaSalida | date: 'shortTime' }}</p>
+            <p>Precio: ${{ viaje.precio }}</p>
+            <p>Espacios disponibles: {{ viaje.espacio }}</p>
+          </ion-label>
+          <!-- Botón de eliminar viaje -->
+          <ion-button color="danger" fill="clear" (click)="eliminarViaje(viaje)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mostrar el formulario para crear un nuevo viaje si no hay viajes -->
+  <ion-card *ngIf="viajes.length === 0" class="custom-card">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Crear Nuevo Viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="createViaje()">
+        <ion-item>
+          <ion-label position="floating">Nombre del Viaje</ion-label>
+          <ion-input [(ngModel)]="viaje.nombre" name="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Destino</ion-label>
+          <ion-input [(ngModel)]="viaje.destino" name="destino" (ionBlur)="updateMapWithDestino()"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Precio del Viaje</ion-label>
+          <ion-input [(ngModel)]="viaje.precio" name="precio" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Espacio Disponible</ion-label>
+          <ion-input [(ngModel)]="viaje.espacio" name="espacio" type="number"></ion-input>
+        </ion-item>
+        <!-- Selector de tiempo para la hora de salida -->
+        <ion-item>
+          <ion-label position="floating">Hora de Salida</ion-label>
+          <ion-datetime display-format="HH:mm" presentation="time" [(ngModel)]="viaje.horaSalida" name="horaSalida"></ion-datetime>
+        </ion-item>
+        <ion-button expand="block" color="success" type="submit">
+          <ion-icon slot="start" name="checkmark-done-outline"></ion-icon>
+          Guardar Viaje
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

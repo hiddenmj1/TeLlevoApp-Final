@@ -1,0 +1,40 @@
+.trip-card {
+    --background: #f8f9fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .trip-card ion-card-header {
+    --background: #007bff;
+    --color: #fff;
+    --border-radius: 10px 10px 0 0;
+  }
+  
+  .trip-card ion-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .trip-card ion-item {
+    --background: transparent;
+    --color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .trip-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .waiting-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-top: 20px;
+  }

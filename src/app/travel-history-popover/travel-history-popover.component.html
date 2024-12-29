@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-item *ngFor="let viaje of travelHistory">
+    <ion-label>
+      <h2>{{ viaje.nombre }}</h2>
+      <p>Destino: {{ viaje.destinoNombre }}</p>
+      <p>Hora de salida: {{ viaje.horaSalida | date: 'shortTime' }}</p>
+      <p>Precio: {{ viaje.precio }}</p>
+      <p>Estado: {{ viaje.estado }}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item *ngIf="travelHistory.length === 0">
+    <ion-label>
+      <p>No hay viajes en el historial.</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

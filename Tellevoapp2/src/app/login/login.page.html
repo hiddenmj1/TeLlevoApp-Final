@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-title class="header-title">Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-background">
+  <div class="container">
+    <img src="../../assets/img/icono.jpg" alt="Logo" class="logo" />
+
+    <ion-card class="card-style">
+      <ion-card-content>
+        <ion-item class="input-style">
+          <ion-label position="floating" class="label-style">Correo:</ion-label>
+          <ion-input type="email" [(ngModel)]="email" class="input-field"></ion-input>
+        </ion-item>
+
+        <ion-item class="input-style">
+          <ion-label position="floating" class="label-style">Contraseña:</ion-label>
+          <ion-input type="password" [(ngModel)]="password" class="input-field"></ion-input>
+        </ion-item>
+
+        <div class="social-icons">
+          <a class="icon-link">
+            <img src="../../assets/img/google.png" alt="Google" class="icon">
+          </a>
+          <a class="icon-link">
+            <img src="../../assets/img/github.png" alt="GitHub" class="icon">
+          </a>
+        </div>
+
+        <ion-button expand="block" (click)="login()" class="btn-primary">Iniciar Sesión</ion-button>
+        <ion-button expand="block" routerLink="/register" fill="outline" color="primary" class="btn-secondary">Registrarse</ion-button>
+        <ion-button expand="block" color="danger" class="btn-tertiary">Recuperar Contraseña</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

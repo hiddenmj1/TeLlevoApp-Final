@@ -1,0 +1,118 @@
+/* Fondo con degradado */
+.content-background {
+  --background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+}
+
+/* Estilo del encabezado */
+.header-toolbar {
+  --background: transparent;
+  box-shadow: none;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Botón de retroceso */
+ion-back-button {
+  --color: #ffffff; /* Cambia el color del icono si es necesario */
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+}
+
+/* Logo */
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Tarjeta */
+.card-style {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  --background: #ffffff;
+  margin: 0 auto;
+}
+
+/* Campos de entrada */
+.input-style {
+  --background: #fffefe;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.label-style {
+  color: #000000;
+}
+
+.input-field {
+  --color: #000000;
+  font-size: 16px;
+}
+
+/* Iconos sociales */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.icon-link {
+  margin: 0 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-background {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* Botones */
+.btn-primary {
+  --background: linear-gradient(45deg, #4facfe, #00f2fe);
+  --background-hover: linear-gradient(45deg, #00f2fe, #4facfe);
+  --color: #000000;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  --background: var(--background-hover);
+}
+
+
+
+.btn-secondary {
+  border-radius: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}

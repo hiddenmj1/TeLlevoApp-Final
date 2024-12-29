@@ -1,0 +1,71 @@
+/* Estilos del mapa */
+.map-container {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos personalizados para las tarjetas */
+  .custom-card {
+    --background: #f8f9fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-item {
+    --background: #ffffff;
+    --border-radius: 8px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --color: #333;
+    --placeholder-color: #999;
+  }
+  
+  .custom-datetime {
+    --background: #ffffff;
+    --border-radius: 8px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --color: #333;
+    --placeholder-color: #999;
+    --height: 36px; /* Ajustar la altura */
+    --min-height: 36px; /* Ajustar la altura mínima */
+    --max-height: 36px; /* Ajustar la altura máxima */
+    --margin-top: 10px; /* Margen superior */
+    --margin-bottom: 10px; /* Margen inferior */
+    font-size: 14px; /* Ajustar el tamaño de la fuente */
+  }
+
+  /* Estilo para que el título sea negro */
+    ion-card-title {
+    color: #000000; /* Color negro */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  
+  /* Botones de acción */
+  ion-button {
+    --border-radius: 10px;
+    --box-shadow: 0 2px 5px rgba(115, 255, 0, 0.15);
+  }
+  
+  /* Centrar los títulos */
+  ion-card-title {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Añadir margen a los formularios */
+  ion-item {
+    margin-bottom: 15px;
+  }
+  
